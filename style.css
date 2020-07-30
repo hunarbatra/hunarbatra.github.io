@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body {
+    background: #000;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: "Open Sans";
+}
+
+.container .tagline {
+    font-size: 14pt;
+}
+
+.container .title {
+    font-size: 30pt;
+}
+
+.social_icon {
+    display: inline-block;
+    font-size: 26pt;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    -webkit-transition: all 0.5s;
+}
+
+.social_icon:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.social_icon a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social_icon .fa-linkedin {
+    position: relative;
+    top: -1px;
+}
+
+.email_icon a {
+    position: relative;
+    left: -2.5px;
+    top: -2px;
+}
+
+a {
+    color: #fff;
+}
