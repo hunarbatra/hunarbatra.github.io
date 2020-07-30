@@ -11,6 +11,11 @@ body {
     transform: translate(-50%, -50%);
     color: #fff;
     font-family: "Open Sans";
+    animation-name: fadeInFromTop;
+    animation-duration: 0.8s;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .container .tagline {
@@ -54,4 +59,20 @@ body {
 
 a {
     color: #fff;
+}
+
+
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        margin-top: -200px;
+    }
+    25% {
+        opacity: 0;
+        margin-top: -100px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
 }
