@@ -1044,106 +1044,6 @@ th {
   margin-bottom: 0;
 }
 
-/* Second Section Title */
-.section-title2 {
-  margin-bottom: 50px;
-}
-@media (max-width: 1024px) {
-  .section-title2 {
-    margin-bottom: 30px;
-  }
-}
-.section-title2 h2 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  text-transform: capitalize;
-  position: relative;
-  line-height: 44px;
-}
-@media (max-width: 1024px) {
-  .section-title2 h2 {
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 1024px) {
-  .section-title2 h2 {
-    font-size: 22px;
-  }
-}
-.section-title2 h2:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -35px;
-  width: 10px;
-  height: 10px;
-  background: #2977f5;
-  border-radius: 7px;
-}
-
-@media (max-width: 991px) {
-  .section-title2 h2:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -35px;
-    width: 10px;
-    height: 10px;
-    background: linear-gradient(30deg, rgb(41, 119, 245), rgb(41, 119, 245));
-    border-radius: 7px;
-  }
-}
-
-@media (max-width: 991px) {
-  .section-title2 h2:before {
-    bottom: -15px;
-  }
-}
-
-@media (max-width: 991px) {
-  .section-title2 h2:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -31px;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(30deg, rgb(41, 119, 245), rgb(41, 119, 245));
-  }
-}
-
-@media (max-width: 991px) {
-  .section-title2 h2:before {
-    bottom: -11px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .section-title2 h2:before {
-    bottom: -15px;
-  }
-}
-.section-title2 h2:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -31px;
-  width: 100px;
-  height: 2px;
-  background: #2977f5;
-}
-@media (max-width: 1024px) {
-  .section-title2 h2:after {
-    bottom: -11px;
-  }
-}
-.section-title2 p {
-  max-width: 535px;
-  margin-bottom: 0;
-}
-
 .alert-msg {
   color: #008000;
 }
@@ -4531,7 +4431,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /*
 ################
-               End Blog Details  Page style
+                Page End style
 ################
 */
 .footer-area {
@@ -4752,7 +4652,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     height: 100%;
   }
 }
-
 
 .portfolio-experiment a {
   color: black;
