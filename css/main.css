@@ -926,7 +926,7 @@ th {
   transition: all 0.3s ease 0s;
 }
 #back-top a {
-  background: #b6dff5;
+  background: #2977f5; /* old colour scheme #b6dff5 */
   display: block;
   text-align: center;
   width: 35px;
@@ -1079,7 +1079,7 @@ th {
   bottom: -35px;
   width: 10px;
   height: 10px;
-  background: #fff;
+  background: #2977f5;
   border-radius: 7px;
 }
 
@@ -1132,7 +1132,7 @@ th {
   bottom: -31px;
   width: 100px;
   height: 2px;
-  background: #ffffff;
+  background: #2977f5;
 }
 @media (max-width: 1024px) {
   .section-title2 h2:after {
@@ -2760,7 +2760,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .home-banner-area {
-  /* background: url(../img/banner-right.jpg) center; */
+  background: url(../img/banner-right.jpg) center;
   background-size: cover;
   background-repeat: repeat-y;
   min-height: 100%;
