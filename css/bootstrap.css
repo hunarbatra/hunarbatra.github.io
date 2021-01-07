@@ -1683,12 +1683,12 @@ pre code {
 }
 
 .table-hover .table-primary:hover {
-  background-color: #5ab9ea;
+  background: linear-gradient(30deg, rgb(41, 119, 245), rgb(41, 119, 245));
 }
 
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
-  background-color: #5ab9ea;
+  background: linear-gradient(30deg, rgb(41, 119, 245), rgb(41, 119, 245));
 }
 
 .table-secondary,
@@ -5203,7 +5203,7 @@ input[type="submit"].btn-block {
 }
 
 .alert-primary hr {
-  border-top-color: #5ab9ea;
+  border-top-color: rgb(41, 119, 245);
 }
 
 .alert-primary .alert-link {
@@ -5475,7 +5475,7 @@ input[type="submit"].btn-block {
 .list-group-item-primary.list-group-item-action:focus,
 .list-group-item-primary.list-group-item-action:hover {
   color: #004085;
-  background-color: #5ab9ea;
+  background: linear-gradient(30deg, rgb(41, 119, 245), rgb(41, 119, 245));
 }
 
 .list-group-item-primary.list-group-item-action.active {
