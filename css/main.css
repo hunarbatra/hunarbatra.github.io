@@ -11,12 +11,12 @@
 /* =================================== */
 ::-moz-selection {
   /* Code for Firefox */
-  background: linear-gradient(30deg, rgb(41, 119, 245), rgb(41, 119, 245));
+  background: #2977f5;
   color: #fff;
 }
 
 ::selection {
-  background: linear-gradient(30deg, rgb(41, 119, 245), rgb(41, 119, 245));
+  background: #2977f5;
   color: #fff;
 }
 
