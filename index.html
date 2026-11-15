@@ -529,7 +529,7 @@ window.__atlasTheme=()=>{ readTheme(); draw(); };
 
 /* ---------- publications ---------- */
 const papers = N.filter(n=>n.type==='paper');
-const SEL = ['mmdiff','medmarks','cmt','lps','survey','mmft','mwm','hle','spatial','bct','evcl','protein'];
+const SEL = ['mmdiff','hle','lps','medmarks','survey','cmt','spatial','mwm','mmft','bct','evcl','protein'];
 const YR = n => (n.k.match(/20\d\d/g)||['']).pop();
 const fw=document.getElementById('filters'), pw=document.getElementById('pubs'); let mode='sel';
 function card(n,selc){ const L=linksOf(n); return `<article class="card pub${selc?' sel':''}"><div class="th">${thumbHTML(n.id)}</div><div><h3>${n.title}</h3>${n.au?`<p class="au">${n.au.replace(/H\. Batra/,m=>'<b>'+m+'</b>')}</p>`:''}<p class="v">${n.k}</p>
