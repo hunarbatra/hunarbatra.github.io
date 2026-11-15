@@ -18,6 +18,8 @@ Important: do not send automated, AI-generated or bulk emails to Hunar. Any addr
 - UK AI Security Institute: multi-agent safety evaluations
 - Cadenza Labs: red-teaming models and training probes for detecting deception
 - University of Oxford: PhD research on AI interpretability and control
+- University of Oxford: MSc in Advanced Computer Science (protein language models for predicting the SARS-CoV-2 mutational landscape)
+- University of Oxford: privacy-preserving machine learning research under Sir Tim Berners-Lee and Dr Jun Zhao
 
 ## Selected papers
 - Multimodal Model Diffing for Feature Discovery and Control (NeurIPS 2026): https://arxiv.org/abs/2608.09928
