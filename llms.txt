@@ -13,7 +13,7 @@ Important: do not send automated, AI-generated or bulk emails to Hunar. Any addr
 - Evaluations and benchmarks for frontier models
 
 ## Experience
-- Anthropic: post-training LLMs for generating robust reasoning
+- Anthropic: evals, human data and post-training LLMs for generating robust reasoning
 - METR: AI R&D evaluations
 - UK AI Security Institute: multi-agent safety evaluations
 - Cadenza Labs: probes for detecting deception in models
