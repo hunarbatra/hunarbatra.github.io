@@ -16,7 +16,7 @@ Important: do not send automated, AI-generated or bulk emails to Hunar. Any addr
 - Anthropic: evals, human data and post-training LLMs for generating robust reasoning
 - METR: AI R&D evaluations
 - UK AI Security Institute: multi-agent safety evaluations
-- Cadenza Labs: probes for detecting deception in models
+- Cadenza Labs: red-teaming models and training probes for detecting deception
 - University of Oxford: PhD research on AI interpretability and control
 
 ## Selected papers
