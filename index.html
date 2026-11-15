@@ -13,7 +13,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Hunar Batra", "url": "https://hunarbatra.com", "jobTitle": "AI safety researcher, PhD candidate in Computer Science", "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Oxford"}, "knowsAbout": ["AI safety", "Large language models", "Post-training", "Monitoring", "Interpretability", "AI control", "Evaluations"], "sameAs": ["https://scholar.google.com/citations?user=K3_HjboAAAAJ", "https://github.com/hunarbatra", "https://www.linkedin.com/in/hunarbatra"], "description": "Leading AI safety researcher and expert on large language models, doing her PhD in Computer Science at the University of Oxford. Expert in safety, post-training, monitoring, interpretability, control and evaluations of LLMs."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Schibsted+Grotesk:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Schibsted+Grotesk:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#07061A">
 <script>try{if(localStorage.getItem('hb-theme')==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 <style>
@@ -46,7 +46,9 @@ h1,h2,h3{font-family:var(--head);letter-spacing:-.015em;margin:0}
 @media (max-width:600px){.wrap{padding:0 18px}}
 
 /* nav */
-nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 32px;border-bottom:1px solid transparent;transition:background-color .25s,border-color .25s,padding .25s}
+nav.scrolled{background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border-bottom-color:var(--line);padding-top:12px;padding-bottom:12px}
+html{scroll-padding-top:72px}
 nav .mark{font-family:var(--head);font-weight:700;font-size:17px;color:var(--hi);text-decoration:none}
 nav .nl{display:flex;gap:22px;align-items:center}
 nav .nl a{color:var(--lav);text-decoration:none;font-size:14px;font-weight:500}
@@ -63,7 +65,7 @@ nav .mark{white-space:nowrap}
 #stack.drag{cursor:grabbing}
 .hero::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 50% 62% at 50% 56%,color-mix(in srgb,var(--bg) 88%,transparent) 0%,color-mix(in srgb,var(--bg) 70%,transparent) 42%,transparent 78%)}
 :root[data-theme=light] .hero::after{background:radial-gradient(ellipse 50% 62% at 50% 56%,color-mix(in srgb,var(--bg) 86%,transparent) 0%,color-mix(in srgb,var(--bg) 60%,transparent) 45%,transparent 78%)}
-@media (max-width:900px){#stack{opacity:.6}.hero::after{background:radial-gradient(ellipse 80% 60% at 50% 55%,color-mix(in srgb,var(--bg) 80%,transparent) 0%,transparent 85%)}}
+@media (max-width:900px){#stack{opacity:.72}.hero::after{background:radial-gradient(ellipse 80% 60% at 50% 55%,color-mix(in srgb,var(--bg) 80%,transparent) 0%,transparent 85%)}}
 .intro{position:relative;z-index:3;text-align:center;max-width:760px;padding:112px 24px 80px;pointer-events:none}
 .intro>*{pointer-events:auto}
 .avatar{display:block;width:230px;height:230px;border-radius:50%;object-fit:cover;margin:0 auto 26px;border:2px solid rgba(255,125,176,.55);box-shadow:0 0 0 6px rgba(255,125,176,.08),0 0 40px rgba(255,125,176,.25)}
@@ -181,7 +183,16 @@ section .wrap>*:not(h2){grid-column:2}
 .yr{font-family:var(--head);font-size:15px;font-weight:700;color:var(--mute);margin:26px 0 10px;letter-spacing:.02em}
 .pub.sel{border-color:rgba(255,125,176,.28)}
 .pub .note{font-size:13.5px;color:var(--lav);margin:7px 0 0}
-footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--mute);font-size:13.5px}
+footer{padding:0 0 56px;color:var(--mute);font-size:13.5px}
+/* Oxford skyline (original drawing): Magdalen, Merton, Christ Church Cathedral, Tom Tower, Carfax, St Mary's, Radcliffe Camera,
+   All Souls, Sheldonian, Bridge of Sighs, Nuffield; rooftop detailing inspired by a painting by Hunar's sister */
+footer .sky{position:relative;margin-top:36px;border-bottom:1px solid var(--line2)}
+/* caption drawn inside the skyline in the page background colour, so it reads as carved into the Radcliffe Camera */
+.skyline .place{fill:var(--bg);font-family:"Pinyon Script","Snell Roundhand",cursive;font-size:25px}
+.skyline{display:block;width:100%;max-width:1440px;height:auto;aspect-ratio:1362/208;margin:0 auto;color:var(--lav);opacity:.3;-webkit-mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent)}
+:root[data-theme=light] .skyline{opacity:.24}
+@media (max-width:700px){.skyline{aspect-ratio:auto;height:110px}}
+footer .wrap{padding-top:28px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--lav);text-decoration:none;margin-right:16px}
 footer .heart{color:var(--pink)}
@@ -277,7 +288,7 @@ footer a:hover{color:var(--hi)}
   </div>
 </div></section>
 
-<footer><div class="wrap"><span>Hunar Batra</span><span>Made with <span class="heart">♥</span></span></div></footer>
+<footer><div class="sky"><svg class="skyline" viewBox="0 -8 1362 208" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><g fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linejoin="round"><path d="M0 200V176H1362V200Z"/><g transform="matrix(0.78 0 0 0.78 75.9 44.0)"><path d="M0 200V158L18 144L36 158V200Z"/><path d="M25.58 156V142H30.58V156Z"/><path d="M38 200V54H86V200Z"/><path d="M38 54V48H42.36V54Z"/><path d="M46.73 54V48H51.09V54Z"/><path d="M55.45 54V48H59.82V54Z"/><path d="M64.18 54V48H68.55V54Z"/><path d="M72.91 54V48H77.27V54Z"/><path d="M81.64 54V48H86V54Z"/><path d="M35.5 49V34.6L36.4 34.6L38 13L39.6 34.6L40.5 34.6V49Z"/><path d="M36.9 14A1.1 1.1 0 1 1 39.1 14Z"/><path d="M51.5 49V38.6L52.4 38.6L54 23L55.6 38.6L56.5 38.6V49Z"/><path d="M52.9 24A1.1 1.1 0 1 1 55.1 24Z"/><path d="M67.5 49V38.6L68.4 38.6L70 23L71.6 38.6L72.5 38.6V49Z"/><path d="M68.9 24A1.1 1.1 0 1 1 71.1 24Z"/><path d="M83.5 49V34.6L84.4 34.6L86 13L87.6 34.6L88.5 34.6V49Z"/><path d="M84.9 14A1.1 1.1 0 1 1 87.1 14Z"/><path d="M86 200V150H150V200Z"/><path d="M86 150V146H95.14V150Z"/><path d="M104.29 150V146H113.43V150Z"/><path d="M122.57 150V146H131.71V150Z"/><path d="M140.86 150V146H150V150Z"/><path d="M86 147V140.6L86.72 140.6L88 131L89.28 140.6L90 140.6V147Z"/><path d="M86.9 132A1.1 1.1 0 1 1 89.1 132Z"/><path d="M146 147V140.6L146.72 140.6L148 131L149.28 140.6L150 140.6V147Z"/><path d="M146.9 132A1.1 1.1 0 1 1 149.1 132Z"/><path d="M97.5 147V142.6L98.04 142.6L99 136L99.96 142.6L100.5 142.6V147Z"/><path d="M97.9 137A1.1 1.1 0 1 1 100.1 137Z"/><path d="M116.5 147V142.6L117.04 142.6L118 136L118.96 142.6L119.5 142.6V147Z"/><path d="M116.9 137A1.1 1.1 0 1 1 119.1 137Z"/><path d="M135.5 147V142.6L136.04 142.6L137 136L137.96 142.6L138.5 142.6V147Z"/><path d="M135.9 137A1.1 1.1 0 1 1 138.1 137Z"/><path d="M153 200V74H191V200Z"/><path d="M153 74V69H157.22V74Z"/><path d="M161.44 74V69H165.67V74Z"/><path d="M169.89 74V69H174.11V74Z"/><path d="M178.33 74V69H182.56V74Z"/><path d="M186.78 74V69H191V74Z"/><path d="M150.75 70V58L151.56 58L153 40L154.44 58L155.25 58V70Z"/><path d="M151.9 41A1.1 1.1 0 1 1 154.1 41Z"/><path d="M163.75 70V61.2L164.56 61.2L166 48L167.44 61.2L168.25 61.2V70Z"/><path d="M164.9 49A1.1 1.1 0 1 1 167.1 49Z"/><path d="M175.75 70V61.2L176.56 61.2L178 48L179.44 61.2L180.25 61.2V70Z"/><path d="M176.9 49A1.1 1.1 0 1 1 179.1 49Z"/><path d="M188.75 70V58L189.56 58L191 40L192.44 58L193.25 58V70Z"/><path d="M189.9 41A1.1 1.1 0 1 1 192.1 41Z"/><path d="M191 200V148L211.5 134L232 148V200Z"/><path d="M220.48 146V132H225.48V146Z"/><path d="M233 200V96H267V200Z"/><path d="M230.75 96V90.4L231.56 90.4L233 82L234.44 90.4L235.25 90.4V96Z"/><path d="M231.9 83A1.1 1.1 0 1 1 234.1 83Z"/><path d="M264.75 96V90.4L265.56 90.4L267 82L268.44 90.4L269.25 90.4V96Z"/><path d="M265.9 83A1.1 1.1 0 1 1 268.1 83Z"/><path d="M238 96V84H262V96Z"/><path d="M236.25 84V77.6L236.88 77.6L238 68L239.12 77.6L239.75 77.6V84Z"/><path d="M236.9 69A1.1 1.1 0 1 1 239.1 69Z"/><path d="M260.25 84V77.6L260.88 77.6L262 68L263.12 77.6L263.75 77.6V84Z"/><path d="M260.9 69A1.1 1.1 0 1 1 263.1 69Z"/><path d="M239 84L250 30L261 84Z"/><path d="M241.75 70.5L239.35 69L242.15 66Z"/><path d="M258.25 70.5L260.65 69L257.85 66Z"/><path d="M244.5 57L242.1 55.5L244.9 52.5Z"/><path d="M255.5 57L257.9 55.5L255.1 52.5Z"/><path d="M247.25 43.5L244.85 42L247.65 39Z"/><path d="M252.75 43.5L255.15 42L252.35 39Z"/><path d="M267 200V150H345V200Z"/><path d="M267 150V146H274.09V150Z"/><path d="M281.18 150V146H288.27V150Z"/><path d="M295.36 150V146H302.45V150Z"/><path d="M309.55 150V146H316.64V150Z"/><path d="M323.73 150V146H330.82V150Z"/><path d="M337.91 150V146H345V150Z"/><path d="M267 147V140.6L267.72 140.6L269 131L270.28 140.6L271 140.6V147Z"/><path d="M267.9 132A1.1 1.1 0 1 1 270.1 132Z"/><path d="M341 147V140.6L341.72 140.6L343 131L344.28 140.6L345 140.6V147Z"/><path d="M341.9 132A1.1 1.1 0 1 1 344.1 132Z"/><path d="M278.5 147V142.6L279.04 142.6L280 136L280.96 142.6L281.5 142.6V147Z"/><path d="M278.9 137A1.1 1.1 0 1 1 281.1 137Z"/><path d="M297.5 147V142.6L298.04 142.6L299 136L299.96 142.6L300.5 142.6V147Z"/><path d="M297.9 137A1.1 1.1 0 1 1 300.1 137Z"/><path d="M316.5 147V142.6L317.04 142.6L318 136L318.96 142.6L319.5 142.6V147Z"/><path d="M316.9 137A1.1 1.1 0 1 1 319.1 137Z"/></g><g transform="matrix(0.78 0 0 0.78 161.2 44.0)"><path d="M1190 200V150L1213 136L1236 150V200Z"/><path d="M1223.38 148V134H1228.38V148Z"/><path d="M1236 200V130Q1236 116 1252 114H1312Q1328 116 1328 130V200Z"/><path d="M1269 116V98H1295V116Z"/><path d="M1267 99C1267 84 1297 84 1297 99Z"/><path d="M1277.5 89V78H1286.5V89Z"/><path d="M1276.5 79C1276.5 72 1287.5 72 1287.5 79Z"/><path d="M1281.3 72V64H1282.7V72Z"/><path d="M1279.75 67.75V66.25H1284.25V67.75Z"/><path d="M1328 200V152H1352V200Z"/><path d="M1326 152V149H1354V152Z"/><path d="M1354 138Q1384 124 1414 138Z"/><path d="M1350 200V130H1362V200Z"/><path d="M1406 200V130H1418V200Z"/><path d="M1412 200V146H1452V200Z"/><path d="M1412 146V142H1420V146Z"/><path d="M1428 146V142H1436V146Z"/><path d="M1444 146V142H1452V146Z"/><path d="M1412 143V136.6L1412.72 136.6L1414 127L1415.28 136.6L1416 136.6V143Z"/><path d="M1412.9 128A1.1 1.1 0 1 1 1415.1 128Z"/><path d="M1448 143V136.6L1448.72 136.6L1450 127L1451.28 136.6L1452 136.6V143Z"/><path d="M1448.9 128A1.1 1.1 0 1 1 1451.1 128Z"/><path d="M1423.5 143V138.6L1424.04 138.6L1425 132L1425.96 138.6L1426.5 138.6V143Z"/><path d="M1423.9 133A1.1 1.1 0 1 1 1426.1 133Z"/><path d="M1459 200V92H1485V200Z"/><path d="M1463 92V70H1481V92Z"/><path d="M1461.5 70V64.4L1462.04 64.4L1463 56L1463.96 64.4L1464.5 64.4V70Z"/><path d="M1461.9 57A1.1 1.1 0 1 1 1464.1 57Z"/><path d="M1479.5 70V64.4L1480.04 64.4L1481 56L1481.96 64.4L1482.5 64.4V70Z"/><path d="M1479.9 57A1.1 1.1 0 1 1 1482.1 57Z"/><path d="M1464 70L1472 20L1480 70Z"/><path d="M1466 57.5L1463.6 56L1466.4 53Z"/><path d="M1478 57.5L1480.4 56L1477.6 53Z"/><path d="M1468 45L1465.6 43.5L1468.4 40.5Z"/><path d="M1476 45L1478.4 43.5L1475.6 40.5Z"/><path d="M1470 32.5L1467.6 31L1470.4 28Z"/><path d="M1474 32.5L1476.4 31L1473.6 28Z"/><path d="M1471.3 21V14.6H1472.7V21Z"/><path d="M1470.2 17.6V16.4H1473.8V17.6Z"/><path d="M1485 200V154L1498.75 140L1512.5 154V200Z"/><path d="M1503.95 152V138H1508.95V152Z"/><path d="M1512.5 200V154L1526.25 140L1540 154V200Z"/></g><g transform="matrix(0.78 0 0 0.78 161.2 44.0)"><path fill-rule="evenodd" d="M1356 200V138H1412V200ZM1366 200V170Q1366 156 1384 154Q1402 156 1402 170V200Z"/></g><path d="M345 200V195.8H345.6V195.3H346.2V194.7H346.8V193.5H348.0V192.9H349.2V192.3H350.3V191.7H350.9V191.1H351.5V190.5H352.1V189.9H353.3V189.3H353.9V188.7H355.1V187.5H356.3V186.9H356.9V186.3H358.7V185.2H359.8V184.6H360.4V184H361.0V183.4H361.6V176.3H362.2V168.5H362.8V167.9H363.4V166.2H364.0V162.6H364.6V158.4H365.2V156.1H365.8V153.1H367.0V154.3H367.6V157.3H368.2V160.2H368.7V164.4H369.3V166.2H369.9V168.5H370.5V179.2H371.1V176.3H371.7V175.7H372.9V176.3H373.5V179.8H374.7V167.9H375.3V163.2H375.9V161.4H376.5V159H377.1V156.1H377.7V153.1H378.8V156.1H379.4V160.2H380.0V162.6H380.6V163.8H381.2V169.1H381.8V171.5H383.6V169.1H384.2V168.5H385.4V167.9H387.7V166.2H388.9V165.6H389.5V165H391.3V163.8H391.9V163.2H392.5V162.6H393.1V151.9H394.9V150.1H395.5V149.5H396.6V151.3H397.2V151.9H398.4V162H399.0V162.6H399.6V163.2H400.8V163.8H402.0V164.4H402.6V165H403.2V166.2H405.6V166.8H406.1V125.8H406.7V125.2H408.5V124.6H410.3V125.2H410.9V124H412.1V123.4H415.1V124H415.6V122.2H416.8V121.6H419.2V121H420.4V120.4H421.0V115.1H422.2V115.7H422.8V120.4H423.4V121H424.6V121.6H426.3V122.2H426.9V123.4H427.5V124H428.1V122.8H430.5V123.4H431.7V125.2H432.9V124H434.0V124.6H435.8V125.2H437.6V185.8H438.2V186.3H439.4V186.9H440.0V187.5H441.2V188.1H441.8V188.7H442.4V167.3H443.0V166.8H444.1V166.2H444.7V165.6H445.9V165H446.5V164.4H447.1V163.8H448.3V163.2H449.5V162.6H454.8V157.3H455.4V156.1H456.6V155.5H457.2V154.3H458.4V155.5H459.0V156.1H460.2V156.7H460.8V162.6H466.1V163.2H467.3V163.8H468.5V164.4H469.1V165H470.3V165.6H470.9V166.2H472.0V166.8H472.6V167.3H473.2V192.9H473.8V192.3H475.0V134.1H475.6V133.5H476.8V126.4H477.4V116.9H478.0V116.3H478.6V114.5H479.2V94.9H479.8V92.5H480.4V89H480.9V81.3H481.5V74.1H482.1V68.8H482.7V62.3H483.3V60.5H483.9V66.4H484.5V71.8H485.1V77.1H485.7V81.9H486.3V91.4H486.9V93.7H487.5V108.6H489.9V108H491.0V104.4H491.6V103.2H492.8V103.8H493.4V103.2H495.2V109.2H495.8V108.6H496.4V108H497.6V108.6H499.4V108H499.9V95.5H500.5V94.9H501.1V84.2H501.7V80.1H502.3V73.6H502.9V62.3H503.5V60.5H504.1V62.3H504.7V72.4H505.3V80.7H505.9V89H506.5V94.3H507.1V108H507.7V108.6H509.4V108H510.6V108.6H511.2V103.2H513.0V103.8H513.6V103.2H515.4V108.6H516.0V108H517.2V108.6H518.9V107.4H519.5V93.7H520.1V89H520.7V83H521.3V77.1H521.9V70H522.5V65.8H523.1V59.9H523.7V65.8H524.3V71.8H524.9V77.7H525.5V84.2H526.1V92H526.7V110.4H527.3V116.9H527.8V116.3H529.0V116.9H529.6V124.6H530.2V132.9H530.8V133.5H531.4V161.4H532.0V160.8H532.6V160.2H534.4V159.6H535.0V137.1H535.6V135.9H536.2V134.1H537.9V135.9H538.5V116.9H539.1V98.5H539.7V93.7H540.3V91.4H540.9V89H541.5V85.4H542.7V91.4H543.3V92H543.9V84.2H544.5V83H545.1V79.5H545.7V75.9H546.3V72.4H546.8V68.8H547.4V63.5H548.0V65.8H548.6V71.2H549.2V74.1H550.4V63.5H551.6V65.2H552.2V61.7H552.8V58.1H553.4V53.4H554.0V48.6H554.6V44.5H555.2V40.9H555.7V36.1H556.3V31.4H556.9V27.8H557.5V24.3H558.1V20.1H558.7V15.4H559.3V10.6H559.9V2.3H560.5V-6H561.7V7.1H562.3V11.8H562.9V16H563.5V20.7H564.1V24.9H564.7V29H565.2V32H565.8V36.7H566.4V41.5H567.0V44.5H567.6V48.6H568.2V51.6H568.8V55.7H569.4V59.9H570.0V64.1H570.6V64.6H571.2V62.9H571.8V65.8H572.4V74.1H573.6V70H574.2V63.5H574.7V65.2H575.3V68.2H575.9V72.4H576.5V75.9H577.1V79.5H577.7V83.6H578.3V86.6H578.9V91.4H579.5V89H580.1V85.4H581.3V89H581.9V91.4H582.5V94.3H583.1V97.3H583.7V110.4H584.2V116.3H584.8V135.3H585.4V134.7H586.6V159.6H587.2V150.7H587.8V146.6H588.4V141.8H589.0V138.9H589.6V144.2H590.2V151.3H590.8V159.6H592.0V132.3H592.6V131.7H594.9V133.5H596.1V127H596.7V110.4H597.3V106.2H597.9V103.2H598.5V107.4H599.1V111.5H599.7V115.1H600.3V112.7H600.9V110.4H601.5V115.1H602.6V108H603.2V103.2H604.4V107.4H605.0V117.5H605.6V132.3H606.2V133.5H606.8V131.7H609.8V132.9H610.4V146.6H611.0V140H612.7V132.9H613.3V132.3H613.9V131.7H616.3V133.5H617.5V113.3H618.1V108.6H618.7V103.2H619.9V109.2H620.5V115.1H621.6V106.8H622.2V108.6H622.8V115.1H624.0V108.6H624.6V103.2H625.8V108.6H626.4V119.3H627.0V132.9H627.6V133.5H628.2V131.7H630.6V132.3H631.1V133.5H631.7V159.6H632.3V153.7H632.9V150.1H633.5V143.6H634.1V139.4H634.7V141.8H635.3V147.8H635.9V152.5H636.5V153.1H637.1V166.2H637.7V146.6H638.3V146H638.9V145.4H640.6V138.9H641.2V138.3H641.8V137.7H642.4V137.1H643.0V131.1H663.2V113.9H663.8V113.3H665.0V112.7H666.2V112.1H666.8V106.2H667.4V105H668.0V98.5H668.5V97.3H669.1V96.7H669.7V94.9H670.9V97.3H671.5V97.9H672.1V105H673.3V102H673.9V97.3H674.5V93.7H675.1V91.4H675.7V89.6H676.3V87.8H676.9V86H677.4V84.2H678.0V83H678.6V81.3H679.2V80.1H679.8V79.5H680.4V78.3H681.0V77.1H681.6V76.5H682.2V75.3H682.8V74.7H683.4V74.1H684.0V73H684.6V72.4H685.2V71.8H685.8V71.2H686.4V70.6H686.9V70H687.5V69.4H688.1V68.8H688.7V68.2H689.9V67.6H690.5V67H691.1V66.4H692.3V65.8H692.9V65.2H694.1V64.6H695.3V64.1H696.4V63.5H697.6V62.9H698.8V62.3H700.0V61.7H700.6V59.3H701.2V58.7H704.8V43.3H705.4V42.7H705.9V39.7H706.5V37.9H707.1V36.7H707.7V36.1H708.3V35.6H708.9V35H709.5V34.4H710.7V33.8H711.9V33.2H712.5V31.4H713.1V26.7H713.7V24.3H714.9V26.7H715.4V27.8H716.0V33.8H717.8V34.4H719.0V35H719.6V35.6H720.2V36.1H720.8V36.7H721.4V37.9H722.0V39.1H722.6V42.7H723.8V58.7H724.9V59.3H725.5V58.7H727.3V59.3H727.9V62.3H728.5V62.9H729.7V63.5H730.9V64.1H732.1V64.6H733.3V65.2H734.4V65.8H735.0V66.4H736.2V67H736.8V67.6H737.4V68.2H738.6V68.8H739.2V69.4H739.8V70H740.4V70.6H741.0V71.2H741.6V71.8H742.2V72.4H742.8V73H743.3V73.6H743.9V74.1H744.5V75.3H745.1V75.9H745.7V77.1H746.3V77.7H746.9V78.3H747.5V79.5H748.1V80.7H748.7V81.9H749.3V82.5H749.9V84.2H750.5V85.4H751.1V87.2H751.7V89H752.3V90.8H752.8V93.1H753.4V95.5H754.0V100.9H754.6V104.4H755.2V105H755.8V98.5H756.4V97.9H757.0V97.3H757.6V94.9H758.2V96.7H758.8V97.3H759.4V98.5H760.0V105H760.6V105.6H761.2V106.2H761.7V112.1H762.3V112.7H763.5V113.3H764.7V113.9H765.3V131.1H784.9V131.7H785.5V137.1H786.7V137.7H787.3V138.3H787.9V145.4H789.1V146H790.8V146.6H791.4V124.6H792.0V124H793.2V123.4H793.8V110.4H795.0V109.8H795.6V108H796.8V109.8H798.0V114.5H798.6V113.9H799.1V113.3H799.7V112.7H800.3V104.4H800.9V103.8H801.5V103.2H802.1V98.5H802.7V95.5H803.3V91.4H803.9V87.2H804.5V83.6H805.1V80.7H805.7V76.5H806.3V72.4H806.9V68.2H807.5V65.2H808.1V60.5H808.6V55.7H809.2V45.1H809.8V40.3H810.4V30.8H811.6V31.4H812.2V46.2H812.8V58.1H813.4V62.3H814.0V65.8H814.6V70H815.2V74.1H815.8V77.7H816.4V81.3H817.0V85.4H817.6V89.6H818.1V92.5H818.7V96.7H819.3V100.9H819.9V103.8H821.1V104.4H821.7V112.7H822.3V113.9H822.9V109.8H823.5V109.2H824.7V109.8H825.3V109.2H825.9V108H826.5V109.2H827.1V109.8H827.6V115.1H828.2V122.8H828.8V123.4H830.0V124H831.2V158.4H831.8V156.7H832.4V163.8H833.0V164.4H833.6V165H834.2V169.7H834.8V170.3H835.4V171.5H836.0V180.4H836.6V138.3H837.1V135.9H837.7V134.7H838.3V133.5H838.9V131.7H839.5V132.9H840.1V133.5H840.7V134.7H841.3V133.5H841.9V132.3H842.5V131.7H843.1V131.1H843.7V130.5H844.3V129.9H844.9V129.4H845.5V128.8H846.0V123.4H846.6V122.8H847.2V121H847.8V116.9H848.4V111H849.0V110.4H849.6V109.2H850.8V110.4H851.4V111H852.0V116.3H852.6V121.6H853.2V122.8H853.8V123.4H854.4V128.8H855.0V129.4H855.5V129.9H856.1V130.5H856.7V131.1H857.3V131.7H857.9V132.3H858.5V132.9H859.1V134.7H859.7V134.1H860.3V132.3H861.5V134.1H862.1V135.3H862.7V136.5H863.3V137.7H863.9V148.4H865.6V147.2H868.0V146.6H869.2V147.2H869.8V148.4H870.4V148.9H872.2V148.4H872.8V147.2H874.5V146.6H876.9V147.2H877.5V148.4H878.1V148.9H879.9V148.4H880.5V147.2H881.1V146.6H885.2V147.2H885.8V148.9H887.6V148.4H888.8V146.6H892.9V147.2H893.5V148.4H895.9V147.2H896.5V140H897.1V135.9H897.7V132.3H898.3V126.4H899.5V133.5H900.1V138.3H900.7V146.6H901.3V148.4H903.6V146.6H907.8V147.2H909.0V146.6H909.6V144.2H910.2V141.2H910.8V134.1H911.4V131.1H911.9V132.3H912.5V128.8H913.1V124H913.7V111.5H914.9V105H915.5V104.4H916.1V99.7H916.7V94.3H917.3V87.2H917.9V86H918.5V87.2H919.1V94.9H919.7V99.7H920.3V104.4H920.9V105H921.4V111.5H922.6V124H923.2V129.4H923.8V132.9H924.4V131.1H925.0V132.9H925.6V136.5H926.2V147.2H926.8V147.8H927.4V148.4H928.0V147.8H928.6V147.2H929.2V146.6H932.1V147.2H935.1V146.6H938.1V133.5H938.7V129.9H939.3V125.8H939.8V121H940.4V118.7H941.0V124.6H941.6V127.6H942.2V131.7H942.8V138.3H943.4V137.7H944.0V137.1H944.6V136.5H945.2V135.9H947.0V135.3H947.6V133.5H948.2V132.9H948.8V132.3H949.9V131.7H951.7V129.4H952.3V128.8H952.9V128.2H954.7V127.6H955.3V125.8H955.9V124.6H957.1V124H957.7V123.4H958.3V108.6H959.4V106.2H960.6V108.6H961.8V122.2H962.4V122.8H963.0V123.4H963.6V124H964.2V124.6H964.8V125.8H965.4V127.6H967.2V128.2H968.3V129.4H968.9V131.7H969.5V131.1H970.7V131.7H971.3V132.3H971.9V134.7H974.3V135.3H974.9V135.9H975.5V136.5H976.1V137.1H976.7V137.7H977.2V138.3H977.8V133.5H978.4V128.8H979.0V124H979.6V119.3H980.8V125.8H981.4V129.4H982.0V133.5H982.6V146.6H996.2V140H996.8V137.1H997.4V131.7H998.0V125.8H999.2V132.3H999.8V137.1H1000.4V139.4H1001.0V146.6H1015.8V140H1016.4V135.9H1017.0V131.7H1017.6V125.8H1018.2V128.2H1018.8V133.5H1019.4V138.9H1020.0V146.6H1021.2V135.9H1021.8V132.3H1022.4V127.6H1023.0V120.4H1024.1V127.6H1024.7V131.7H1025.3V135.3H1025.9V148.9H1026.5V150.1H1027.1V162H1027.7V162.6H1028.3V163.2H1028.9V175.7H1032.5V176.3H1033.1V191.7H1033.6V190.5H1034.2V189.9H1034.8V189.3H1035.4V188.7H1036.6V188.1H1037.2V187.5H1037.8V186.9H1038.4V186.3H1039.0V185.8H1039.6V185.2H1040.2V184.6H1040.8V184H1042.0V183.4H1042.6V173.3H1043.1V172.7H1043.7V172.1H1044.3V118.1H1044.9V117.5H1045.5V112.1H1046.1V110.4H1046.7V106.8H1047.9V110.4H1048.5V112.7H1049.7V112.1H1050.3V111.5H1050.9V108H1051.5V106.2H1052.0V104.4H1052.6V103.8H1053.2V102.6H1053.8V102H1054.4V100.9H1055.0V100.3H1056.2V99.7H1056.8V99.1H1057.4V98.5H1058.6V97.9H1059.2V97.3H1060.4V96.7H1061.5V96.1H1062.1V94.3H1062.7V93.1H1063.3V83H1063.9V78.9H1064.5V77.7H1065.1V83H1065.7V88.4H1066.3V94.3H1066.9V96.1H1067.5V96.7H1068.7V97.3H1069.9V97.9H1071.0V98.5H1071.6V99.1H1072.8V99.7H1073.4V100.3H1074.0V100.9H1074.6V101.5H1075.2V102H1075.8V103.2H1076.4V104.4H1077.0V105.6H1077.6V107.4H1078.2V111.5H1078.8V112.1H1079.4V112.7H1080.0V111H1080.5V109.8H1081.1V106.8H1081.7V108.6H1082.3V110.4H1082.9V112.7H1083.5V116.9H1084.1V162H1084.7V182.8H1085.3V192.9H1086.5V188.7H1087.1V188.1H1088.9V192.9H1089.4V200Z"/></g><text class="place" x="714.0" y="187" text-anchor="middle">Oxford, UK</text></svg></div><div class="wrap"><span>Hunar Batra</span><span>Made with <span class="heart">♥</span></span></div></footer>
 
 <script>
 // Paper thumbnails: real figures where the paper has a public teaser, otherwise a small method sketch.
@@ -425,108 +436,201 @@ const N = [
 const byId = Object.fromEntries(N.map(n=>[n.id,n]));
 
 function linksOf(n){ const L=[]; if(n.link) L.push([n.ll||'Paper',n.link]); if(n.alt) L.push(['arXiv',n.alt]); if(n.proj) L.push(['Project',n.proj]); if(n.code) L.push(['Code',n.code]); return L; }
-/* ---------- hero background: a model's layer stack, features firing as tokens pass through ---------- */
+/* ---------- hero background: a small 12-layer transformer during pretraining.
+   One residual-stream lane per token position runs through every layer; each layer's attention (arcs between positions)
+   and MLP (neurons) read from the stream and add back into it at the (+) junctions.
+   Heads follow the mech-interp literature: a previous-token head (L2) and an induction head (L9) that K-composes with it
+   (Elhage et al. 2021; Olsson et al. 2022), a duplicate-token head (L4; Wang et al. 2022, IOI) and a copy-suppression head
+   (L11; McDougall et al. 2023). The other heads mostly attend to the first position (attention sinks; Xiao et al. 2023).
+   Positions 6-7 repeat positions 1-2, so the induction head attends to the position after the earlier copy.
+   Its strength grows over training, with the loss dropping as it forms. Features are residual-stream directions (SAE-style),
+   named after features reported in the literature: DNA, base64 (Towards Monosemanticity, 2023); new sentence, rhyme planning,
+   known entity, harmful request, Assistant (Biology of a Large Language Model, 2025); evil, sycophancy (Persona Vectors, 2025);
+   calm (Emotion Concepts, 2026). Token-level ones sit early, abstract ones late; each pass lights a subset. ---------- */
+{
 const cv=document.getElementById('stack'), g=cv.getContext('2d');
 const COLS=['#FF7DB0','#4BE39A','#B57BFF','#FFB454','#6CC4FF','#FF5A4E'];
 const COLS_L=['#D63F7A','#14996A','#7B4FE0','#C2780C','#2A82C4','#D9412F'];
-const rgba=(h,a)=>{const n=parseInt(h.slice(1),16);return `rgba(${n>>16},${(n>>8)&255},${n&255},${a})`;};
+const rgba=(h,a)=>{const n=parseInt(h.slice(1),16);return `rgba(${n>>16},${(n>>8)&255},${n&255},${Math.max(0,Math.min(1,a))})`;};
 let W=0,H=0,dpr=1,t=0,visible=true,LIGHT=false,mx=0,my=0,smx=0,smy=0;
-const NL=12, SPX=170, PY=390, PZ=230;
-const LX=i=>(i-(NL-1)/2)*SPX;
-let seed=7; const rnd=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };
-const BG=[], FE=[];
-for(let i=0;i<NL;i++){ for(let n=0;n<46;n++) BG.push({li:i,y:(rnd()*2-1)*PY*.9,z:(rnd()*2-1)*PZ*.9,ph:rnd()*6.28});
-  for(let n=0;n<7;n++) FE.push({li:i,y:(rnd()*2-1)*PY*.75,z:(rnd()*2-1)*PZ*.75,c:Math.floor(rnd()*COLS.length),ph:rnd()*6.28,a:0,sz:.7+rnd()*.8}); }
-const byL=i=>FE.filter(f=>f.li===i);
-const cam={yaw:.62,pitch:.2,dist:1550,f:1150};
+const NL=12, SPX=165, PY=290, PZ=220, X0=110, NR=5;
+const T=8;
+const LX=i=>(i-(NL-1)/2)*SPX+X0, TY=k=>PY*.8-k*PY*1.6/(T-1), NZ=r=>PZ*(.2+r*.17), ZB=-PZ*.12;
+let seed=11; const rnd=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };
+const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)), sig=x=>1/(1+Math.exp(-x));
+
+// MLP neurons: NR per token per layer; a few of them are labelled features
+const CELL=[];
+for(let i=0;i<NL;i++){ CELL[i]=[]; for(let r=0;r<NR;r++) for(let k=0;k<T;k++) CELL[i].push({i,r,k,c:[0,1,2,4,5][Math.floor(rnd()*5)],a:0,act:0,gl:0}); }
+// embedding vector entering each lane, logit vector leaving it (ED cells each)
+const ED=6, EMB=[...Array(T)].map(()=>[...Array(ED)].map(()=>({v:.15+rnd()*.85,c:[0,1,2,4,5][Math.floor(rnd()*5)]}))), TOP=[...Array(T)].map(()=>Math.floor(rnd()*ED));
+const EX=j=>LX(0)-SPX*(1.25-j*.12), UX=j=>LX(NL-1)+SPX*(.55+j*.12);
+const cellAt=(i,r,k)=>CELL[i][r*T+k];
+const FEATS=[[0,4,4,'DNA'],[1,6,5,'new sentence'],[2,2,1,'base64'],[8,5,1,'known entity'],[9,2,4,'sycophancy'],[9,6,0,'rhyme planning'],[10,4,5,'harmful request'],[10,7,2,'evil'],[11,1,2,'Assistant'],[11,6,1,'calm']]
+  .map(([i,k,c,label])=>({i,k,c,label,a:0,on:true}));
+
+// attention heads, one drawn per layer. pat(q) lists [key, weight] for query position q (causal: key <= q)
+const PREV=1, DUP=3, IND=8, CSUP=10, HEADS=[];
+for(let i=0;i<NL;i++){
+  if(i===PREV) HEADS.push({i,h:7,c:4,name:'previous-token head',key:true,pat:q=>q?[[q-1,.85]]:[],hot:[3,2]});
+  else if(i===DUP) HEADS.push({i,h:5,c:2,name:'duplicate-token head',key:true,pat:q=>q===6?[[1,.8]]:q===7?[[2,.85]]:q>1?[[0,.3]]:[],hot:[7,2]});
+  else if(i===IND) HEADS.push({i,h:2,c:0,name:'induction head',key:true,ind:true,pat:q=>q===6?[[2,.85]]:q===7?[[3,.95]]:q>1?[[q-1,.18]]:[],hot:[7,3]});
+  else if(i===CSUP) HEADS.push({i,h:7,c:5,name:'copy-suppression head',key:true,pat:q=>q===7?[[3,.7]]:q>1?[[0,.3]]:[],hot:[7,3]});
+  else { const c=[2,5,3,4,2,1][i%6], h=Math.floor(rnd()*8), pick=[...Array(T)].map((_,q)=>Math.floor(rnd()*(q+1)));
+    HEADS.push({i,h,c,key:false,pat:q=>{ const o=[]; if(q>1) o.push([0,.4]); if(pick[q]>0&&pick[q]<q) o.push([pick[q],.45]); return o; }}); }
+}
+const headOf=i=>HEADS[i];
+
+// training state
+let phase='idle', front=-1, back=-1, wait=.6, stepN=2000, predA=0, circA=0;
+const STEP=100, IND0=2600;   // optimizer steps per drawn training step; step where the induction head forms
+// pretraining loss in nats: starts near ln(vocab) ~ 10.8, falls fast, plateaus near 2.75, with an extra drop when induction heads form (Olsson et al. 2022)
+const lossAt=n=>2.75+7.2*Math.exp(-n/180)+.55*Math.exp(-n/3000)+.35*(1-sig((n-IND0)/120))+(rnd()-.5)*.03;
+const LOSS=[]; for(let j=0;j<48;j++) LOSS.push(lossAt(j*stepN/47));
+let loss=LOSS[LOSS.length-1], indS=sig((stepN-IND0)/120);
+const LA=Array(NL).fill(0), LG=Array(NL).fill(0), FT=Array(NL).fill(-9);
+
+const EDGES=[];
+function fireLayer(i){
+  FT[i]=t; LA[i]=1;
+  CELL[i].forEach(cc=>{ cc.act=rnd()<(cc.k===T-1?.65:.45)?.5+rnd()*.5:0; });
+  FEATS.forEach(F=>{ if(F.i===i&&F.on) F.a=1; });
+  if(i>0){ const src=CELL[i-1].filter(c=>c.act>.4), dst=CELL[i].filter(c=>c.act>.4);
+    for(let n=0;n<6&&src.length&&dst.length;n++){ const b=dst[Math.floor(rnd()*dst.length)], near=src.filter(c=>Math.abs(c.k-b.k)<=1), a=(near.length?near:src)[Math.floor(rnd()*(near.length?near.length:src.length))]; EDGES.push({a,b,life:1,c:b.c}); } }
+}
+function step(dt){
+  smx+=(mx-smx)*Math.min(1,dt*2); smy+=(my-smy)*Math.min(1,dt*2);
+  const sp=RM?.4:1;
+  if(phase==='idle'){ wait-=dt; if(wait<=0){ phase='fwd'; front=0; circA=0; FEATS.forEach(F=>F.on=rnd()<.55); } }
+  else if(phase==='fwd'){ const p=front; front+=dt*2.3*sp;
+    for(let i=0;i<NL;i++) if(p<i&&front>=i) fireLayer(i);
+    if(p<NL-.2&&front>=NL-.2) predA=1;
+    if(front>IND) circA=1;
+    if(front>NL+1.2){ phase='bwd'; back=NL-.5; } }
+  else if(phase==='bwd'){ const p=back; back-=dt*4*sp;
+    for(let i=NL-1;i>=0;i--) if(p>i&&back<=i){ CELL[i].forEach(cc=>cc.gl=.35+rnd()*.65); LG[i]=1; }
+    if(back<-.6){ phase='idle'; wait=RM?2.5:.7; stepN+=STEP; loss=lossAt(stepN); LOSS.push(loss); if(LOSS.length>60) LOSS.shift(); indS=sig((stepN-IND0)/120); } }
+  CELL.forEach(L=>L.forEach(cc=>{ const on=phase==='fwd'&&front>=cc.i&&front-cc.i<1.6, tg=on?cc.act:0;
+    cc.a=tg>cc.a?cc.a+(tg-cc.a)*Math.min(1,dt*9):cc.a*Math.pow(.62,dt); cc.gl*=Math.pow(.18,dt); }));
+  for(let i=0;i<NL;i++){ LA[i]*=Math.pow(HEADS[i].key?.8:.5,dt); LG[i]*=Math.pow(.2,dt); }
+  FEATS.forEach(F=>F.a*=Math.pow(phase==='fwd'?.85:.35,dt));
+  EDGES.forEach(e=>e.life-=dt*.38); while(EDGES.length&&EDGES[0].life<=0) EDGES.shift();
+  if(phase!=='fwd'){ predA*=Math.pow(.55,dt); circA*=Math.pow(.6,dt); }
+}
+
+const cam={yaw:.72,pitch:.16,dist:3400,f:2250};
 function P(x,y,z){ const yaw=cam.yaw+smx*.12, pitch=cam.pitch+smy*.06; const cy=Math.cos(yaw), sy=Math.sin(yaw); const x1=x*cy-z*sy, z1=x*sy+z*cy;
   const cp=Math.cos(pitch), sp=Math.sin(pitch); const y1=y*cp-z1*sp, z2=y*sp+z1*cp+cam.dist;
-  const k=Math.max(W*.86,H*1.25)/1000; const s=cam.f/z2*k; return {x:W*.5+x1*s, y:H*.6-y1*s, s, z:z2}; }
-function resize(){ dpr=Math.min(2,devicePixelRatio||1); const r=cv.getBoundingClientRect(); W=r.width; H=r.height; cv.width=W*dpr; cv.height=H*dpr; }
-// tokens travelling through the residual stream
-const TOK=[]; const ARCS=[]; let tokT=0;
-function newTok(){ const y=(rnd()*2-1)*PY*.5, z=(rnd()*2-1)*PZ*.5; TOK.push({u:-.6,y,z,last:-1,prev:null,c:Math.floor(rnd()*COLS.length)}); }
+  const k=PORT?Math.max(W*.7,H*1.05)/1000:Math.max(W*.8,H*1.15)/1000; const s=cam.f/z2*k; return {x:W*.5+x1*s, y:H*(PORT?.52:.6)-y1*s, s, z:z2}; }
+let KO=null; const intro=document.querySelector('.hero .intro');
+let CW=0, CH=0, PORT=false;
+function resize(){ const r=cv.getBoundingClientRect(); CW=r.width; CH=r.height; PORT=CH>CW*1.15&&CW<900;
+  dpr=Math.min(PORT?1.5:2,devicePixelRatio||1); cv.width=CW*dpr; cv.height=CH*dpr;
+  // W,H are the dimensions of the scene as drawn; in portrait the scene is rotated, so they swap
+  W=PORT?CH:CW; H=PORT?CW:CH;
+  KO=[]; if(intro) [...intro.children].forEach(el=>{ const parts=el.tagName==='IMG'?[el]:el.classList.contains('links')?[...el.children]:[(()=>{const rg=document.createRange(); rg.selectNodeContents(el); return rg;})()];
+    parts.forEach(pt=>{ const b=pt.getBoundingClientRect(); if(b.width) KO.push({x0:b.left-r.left-12,y0:b.top-r.top-10,x1:b.right-r.left+12,y1:b.bottom-r.top+10}); }); }); }
 
-// circuits: paths of features across consecutive layers that get built edge by edge, hold, then dissolve
-const CIRC=[]; let circT=.6;
-function newCircuit(){ const used=new Set(CIRC.map(c=>c.c)); const free=[0,1,2,3,4].filter(c=>!used.has(c)); if(!free.length) return;
-  const c=free[Math.floor(rnd()*free.length)], L=4+Math.floor(rnd()*3), s0=Math.floor(rnd()*(NL-L));
-  const nodes=[], edges=[]; let prev=null;
-  for(let li=s0;li<s0+L;li++){ const fs=byL(li); const pick=prev?fs.slice().sort((a,b)=>((a.y-prev.y)**2+(a.z-prev.z)**2)-((b.y-prev.y)**2+(b.z-prev.z)**2))[Math.floor(rnd()*2)]:fs[Math.floor(rnd()*fs.length)];
-    if(prev) edges.push([prev,pick]); nodes.push(pick);
-    if(prev&&rnd()<.45){ const alt=fs.filter(f=>f!==pick)[Math.floor(rnd()*(fs.length-1))]; edges.push([prev,alt]); nodes.push(alt); }
-    prev=pick; }
-  CIRC.push({c,nodes,edges,age:0,build:edges.length*.32}); }
+function glow(x,y,r,col,a){ const gr=g.createRadialGradient(x,y,0,x,y,r*3.4); gr.addColorStop(0,rgba(col,.5*a)); gr.addColorStop(1,rgba(col,0));
+  g.fillStyle=gr; g.beginPath(); g.arc(x,y,r*3.4,0,6.283); g.fill(); g.fillStyle=rgba(col,Math.min(1,a+.2)); g.beginPath(); g.arc(x,y,r,0,6.283); g.fill(); }
+let PL=[];
+function chip(x,y,txt,col,a,size,nudge){ if(a<.03) return; g.font=`500 ${size||11.5}px "IBM Plex Mono",monospace`; g.textAlign='center';
+  const tw=g.measureText(txt).width+14, hh=(size||11.5)+8; x=Math.max(tw/2+8,Math.min(W-tw/2-8,x));
+  const hit=(xx,yy)=>[...(KO||[]),...(nudge?PL:[])].some(o=>xx+tw/2>o.x0&&xx-tw/2<o.x1&&yy+hh/2>o.y0&&yy-hh/2<o.y1);
+  if(hit(x,y)){ if(!nudge) return; let best=null;
+    for(const dx of [0,-.6,.6,-1.1,1.1]) for(const dy of [0,-26,26,-52,52]){ const xx=x+dx*tw, yy=y+dy;
+      if(xx-tw/2<8||xx+tw/2>W-8||yy<hh||yy>H-hh||hit(xx,yy)) continue; const c=Math.abs(dx*tw)+Math.abs(dy); if(!best||c<best[2]) best=[xx,yy,c]; }
+    if(!best) return; x=best[0]; y=best[1]; }
+  if(nudge) PL.push({x0:x-tw/2-4,y0:y-hh/2-3,x1:x+tw/2+4,y1:y+hh/2+3});
+  g.fillStyle=LIGHT?`rgba(255,255,255,${.9*a})`:`rgba(10,9,32,${.84*a})`; g.beginPath();
+  if(g.roundRect) g.roundRect(x-tw/2,y-hh/2,tw,hh,hh/2); else g.rect(x-tw/2,y-hh/2,tw,hh); g.fill();
+  g.strokeStyle=rgba(col,.7*a); g.lineWidth=1; g.stroke(); g.fillStyle=rgba(col,a); g.fillText(txt,x,y+(size||11.5)*.36); }
+function arcPts(x,k,q,u){ const hgt=PZ*.8*(.25+.75*(q-k)/(T-1)), pts=[], n=18; for(let j=0;j<=n*u;j++){ const v=j/n; pts.push(P(x,TY(k)+(TY(q)-TY(k))*v,ZB-hgt*4*v*(1-v))); } return pts; }
+const line=pts=>{ g.beginPath(); pts.forEach((p,j)=>j?g.lineTo(p.x,p.y):g.moveTo(p.x,p.y)); };
 
-// training steps: an update sweeps L1 to L12 and some features rotate to new directions within their layer
-let trainT=3, wave=-1, training=false; const GH=[];
-function trainStep(dt){
-  trainT-=dt; if(trainT<=0&&!training){ training=true; wave=-.5; trainT=RM?20:9; }
-  if(training){ const prevW=wave; wave+=dt*4.5;
-    for(let li=0;li<NL;li++){ if(prevW<li&&wave>=li){ byL(li).forEach(f=>{ if(rnd()<.4){ const th=(rnd()<.5?-1:1)*(.35+rnd()*.35); GH.push({li,y:f.y,z:f.z,life:1,c:f.c});
-            f.from=[f.y,f.z]; f.to=[f.y*Math.cos(th)-f.z*Math.sin(th)*.8, f.z*Math.cos(th)+f.y*Math.sin(th)*.8]; f.mt=0; f.a=Math.max(f.a,.7); } }); } }
-    if(wave>NL+1){ wave=-1; training=false; } }
-  FE.forEach(f=>{ if(f.mt==null) return; f.mt=Math.min(1,f.mt+dt/1.1); const u=f.mt*f.mt*(3-2*f.mt); f.y=f.from[0]+(f.to[0]-f.from[0])*u; f.z=f.from[1]+(f.to[1]-f.from[1])*u;
-    f.y=Math.max(-PY*.85,Math.min(PY*.85,f.y)); f.z=Math.max(-PZ*.85,Math.min(PZ*.85,f.z)); if(f.mt>=1) f.mt=null; });
-  GH.forEach(g0=>g0.life-=dt*.55); while(GH.length&&GH[0].life<=0) GH.shift();
-}
-
-function step(dt){
-  trainStep(dt);
-  smx+=(mx-smx)*Math.min(1,dt*2); smy+=(my-smy)*Math.min(1,dt*2);
-  FE.forEach(f=>f.a*=Math.pow(.25,dt));
-  tokT-=dt; if(tokT<=0){ tokT=RM?4:1.5; newTok(); }
-  TOK.forEach(tk=>{ tk.u+=dt*(RM?2:4.2); const li=Math.floor(tk.u+.5);
-    if(li>=0&&li<NL&&li!==tk.last){ tk.last=li; const fs=byL(li); const pick=fs.sort((a,b)=>((a.y-tk.y)**2+(a.z-tk.z)**2)-((b.y-tk.y)**2+(b.z-tk.z)**2)).slice(0,2);
-      pick.forEach((f,k)=>{ f.a=1; if(tk.prev) ARCS.push({a:tk.prev,b:f,life:1,c:f.c}); }); tk.prev=pick[0]; } });
-  while(TOK.length&&TOK[0].u>NL+1) TOK.shift();
-  circT-=dt; if(circT<=0){ circT=RM?5:2.4; newCircuit(); }
-  CIRC.forEach(C=>{ C.age+=dt; const on=C.age<C.build+3.6; C.nodes.forEach((f,k)=>{ if(on&&C.age>k*.28) f.a=Math.max(f.a,.85); }); });
-  for(let i=CIRC.length-1;i>=0;i--) if(CIRC[i].age>CIRC[i].build+5) CIRC.splice(i,1);
-  ARCS.forEach(a=>a.life-=dt*.45); while(ARCS.length&&ARCS[0].life<=0) ARCS.shift();
-}
-const sm2=(a,b,x)=>{const u=Math.min(1,Math.max(0,(x-a)/(b-a)));return u*u*(3-2*u);};
-function glow(x,y,r,col,a){ const gr=g.createRadialGradient(x,y,0,x,y,r*3.6); gr.addColorStop(0,rgba(col,.55*a)); gr.addColorStop(1,rgba(col,0)); g.fillStyle=gr; g.beginPath(); g.arc(x,y,r*3.6,0,6.283); g.fill(); g.fillStyle=rgba(col,Math.min(1,a+.15)); g.beginPath(); g.arc(x,y,r,0,6.283); g.fill(); }
 function draw(){
-  g.setTransform(dpr,0,0,dpr,0,0); g.clearRect(0,0,W,H);
-  const PAL=LIGHT?COLS_L:COLS;
-  const order=[...Array(NL).keys()].sort((a,b)=>P(LX(b),0,0).z-P(LX(a),0,0).z);
+  g.setTransform(dpr,0,0,dpr,0,0); g.clearRect(0,0,CW,CH); if(PORT){ g.translate(CW,0); g.rotate(Math.PI/2); }
+  const PAL=LIGHT?COLS_L:COLS, GRAD=PAL[3], PINK=PAL[0];
   const lineC=LIGHT?'84,64,158':'200,214,240', fillC=LIGHT?'118,96,206':'150,172,215', dotC=LIGHT?'96,86,152':'174,184,214';
-  order.forEach(i=>{ const x=LX(i), c=[P(x,PY,-PZ),P(x,PY,PZ),P(x,-PY,PZ),P(x,-PY,-PZ)];
-    const lit=Math.max(0,...byL(i).map(f=>f.a)); const sweep=training?Math.max(0,1-Math.abs(wave-i)/1.2):0;
-    g.beginPath(); c.forEach((p,k)=>k?g.lineTo(p.x,p.y):g.moveTo(p.x,p.y)); g.closePath();
-    g.fillStyle=`rgba(${fillC},${(LIGHT?.06:.05)+lit*.04+sweep*(LIGHT?.08:.07)})`; g.fill();
-    g.strokeStyle=sweep>.2?`rgba(${lineC},${(LIGHT?.3:.2)+sweep*.5})`:lit>.5&&!LIGHT?rgba(PAL[0],.35+lit*.25):`rgba(${lineC},${LIGHT?.33:.2})`; g.lineWidth=1; g.stroke();
-    const lp=P(x,PY+26,-PZ+8); g.fillStyle=`rgba(${lineC},${LIGHT?.6:.5})`; g.font=`600 ${Math.max(9,11*lp.s*1.3)}px "IBM Plex Mono",monospace`; g.textAlign='center'; g.fillText('L'+(i+1),lp.x,lp.y);
-    BG.forEach(d=>{ if(d.li!==i) return; const p=P(x,d.y,d.z); g.fillStyle=`rgba(${dotC},${(LIGHT?.4:.26)+.08*Math.sin(t*.9+d.ph)})`; g.beginPath(); g.arc(p.x,p.y,Math.max(1,2.3*p.s*1.3),0,6.283); g.fill(); });
-    GH.forEach(q=>{ if(q.li!==i) return; const f=FE.find(f=>f.li===i&&f.from&&f.from[0]===q.y&&f.from[1]===q.z); const p=P(x,q.y,q.z);
-      g.strokeStyle=rgba(PAL[q.c],.7*q.life); g.lineWidth=1.3; g.setLineDash([3,3]); g.beginPath(); g.arc(p.x,p.y,4*p.s*1.3,0,6.283); g.stroke();
-      if(f){ const p2=P(x,f.y,f.z); g.beginPath(); g.moveTo(p.x,p.y); g.lineTo(p2.x,p2.y); g.stroke(); } g.setLineDash([]); });
-    FE.forEach(f=>{ if(f.li!==i) return; const p=P(x,f.y,f.z); f.px=p.x; f.py=p.y; const pul=RM?0:.12*Math.sin(t*2+f.ph);
-      glow(p.x,p.y,(3.4+f.a*3.5)*f.sz*p.s*1.3*(1+pul),PAL[f.c],LIGHT?.53+.47*f.a:.38+.62*f.a); });
+  const small=CW<700||PORT, labels=[];
+  // residual stream: one lane per token through every layer, lit up to the forward front
+  for(let k=0;k<T;k++){ const lane=[...Array(NL)].map((_,i)=>P(LX(i),TY(k),0)), tp=P(EX(ED-1),TY(k),0);
+    line([tp,...lane,P(UX(0),TY(k),0)]); g.strokeStyle=`rgba(${lineC},${LIGHT?.2:.13})`; g.lineWidth=1; g.stroke();
+    if(phase==='fwd'&&front>0){ const m=Math.min(front,NL-1), pts=lane.slice(0,Math.floor(m)+1), j=Math.floor(m), f=m-j;
+      if(j<NL-1) pts.push({x:lane[j].x+(lane[j+1].x-lane[j].x)*f,y:lane[j].y+(lane[j+1].y-lane[j].y)*f});
+      line(pts); g.strokeStyle=rgba(k===T-1?PINK:PAL[2],k===T-1?.7:.35); g.lineWidth=k===T-1?2:1.2; g.stroke(); }
+    // each layer reads from the residual stream and adds its output back in (x + attn(x) + mlp(x))
+    lane.forEach((p,i)=>{ const top=P(LX(i),TY(k),NZ(0)), bot=P(LX(i),TY(k),ZB), lit=phase==='fwd'&&front>=i?Math.max(0,1-(front-i)/3):0, col=k===T-1?PINK:PAL[2];
+      g.strokeStyle=lit>.05?rgba(col,.25+.5*lit):`rgba(${lineC},${LIGHT?.16:.1})`; g.lineWidth=1; g.beginPath(); g.moveTo(bot.x,bot.y); g.lineTo(top.x,top.y); g.stroke();
+      const r=Math.max(2.2,(k===T-1?4:3)*p.s*1.3); g.fillStyle=LIGHT?'rgba(247,245,252,.9)':'rgba(7,6,26,.9)'; g.beginPath(); g.arc(p.x,p.y,r,0,6.283); g.fill();
+      g.strokeStyle=lit>.05?rgba(col,.45+.55*lit):`rgba(${lineC},${LIGHT?.4:.28})`; g.lineWidth=1; g.stroke();
+      g.beginPath(); g.moveTo(p.x-r*.6,p.y); g.lineTo(p.x+r*.6,p.y); g.moveTo(p.x,p.y-r*.6); g.lineTo(p.x,p.y+r*.6); g.stroke(); }); }
+  { const a=P(LX(0)+SPX*.5,TY(0),0); if(!small) chip(a.x,a.y-16,'residual stream',LIGHT?'#4A3F7A':'#C9C0EC',.7,10.5); }
+  // layers, back to front
+  const order=[...Array(NL).keys()].sort((a,b)=>P(LX(b),0,0).z-P(LX(a),0,0).z);
+  order.forEach(i=>{ const x=LX(i), c4=[P(x,PY,-PZ),P(x,PY,PZ),P(x,-PY,PZ),P(x,-PY,-PZ)];
+    const fs=phase==='fwd'?Math.max(0,1-Math.abs(front-i)/1.1):0, bs=phase==='bwd'?Math.max(0,1-Math.abs(back-i)/1.1):0;
+    line(c4); g.closePath(); g.fillStyle=`rgba(${fillC},${(LIGHT?.05:.04)+fs*.04})`; g.fill();
+    if(bs>0){ g.fillStyle=rgba(GRAD,bs*(LIGHT?.1:.09)); g.fill(); }
+    g.strokeStyle=bs>.15?rgba(GRAD,.35+bs*.5):fs>.15?rgba(PINK,.25+fs*.45):`rgba(${lineC},${LIGHT?.3:.18})`; g.lineWidth=1; g.stroke();
+    // divider between attention (top) and MLP (bottom)
+    const lp=P(x,PY+26,-PZ+8); g.fillStyle=`rgba(${lineC},${LIGHT?.6:.5})`; g.font=`600 ${Math.max(9,11*lp.s*1.3)}px "IBM Plex Mono",monospace`; g.textAlign='center'; if(PORT){ g.save(); g.translate(lp.x,lp.y); g.rotate(-Math.PI/2); g.fillText('L'+(i+1),0,0); g.restore(); } else g.fillText('L'+(i+1),lp.x,lp.y);
+    if(bs>.5&&!small){ const gp=P(x,PY*.99,PZ*.6); chip(gp.x,gp.y,'∂L/∂W',GRAD,bs,10.5); }
+    // MLP neurons
+    CELL[i].forEach(cc=>{ const p=P(x,TY(cc.k),NZ(cc.r)), r=Math.max(1.8,3.3*p.s*1.3); cc.px=p.x; cc.py=p.y;
+      if(cc.a>.05) glow(p.x,p.y,r*(1+cc.a*.8),PAL[cc.c],LIGHT?.5+.5*cc.a:.4+.6*cc.a);
+      else { g.fillStyle=rgba(PAL[cc.c],LIGHT?.42:.42); g.beginPath(); g.arc(p.x,p.y,r*.85,0,6.283); g.fill(); }
+      if(cc.gl>.05){ g.strokeStyle=rgba(GRAD,.75*cc.gl); g.lineWidth=1.2; g.beginPath(); g.arc(p.x,p.y,r*1.9,0,6.283); g.stroke(); }
+    });
+    // attention head: arcs from key to query, grown as the forward pass reaches this layer
+    const hd=headOf(i), u=cl((t-FT[i])/.45), act=LA[i], col=LG[i]>.25?GRAD:PAL[hd.c];
+    for(let q=1;q<T;q++) hd.pat(q).forEach(([k,w])=>{ if(k===q) return;
+      const ww=hd.ind&&q>=6?w*(.18+.82*indS):w; const al=((hd.key?.32:.16)+act*(hd.key?.68:.6))*ww;
+      if(al<.02) return; const pts=arcPts(x,k,q,act>.05?Math.max(u,.999*(1-act)):1);
+      line(pts); g.strokeStyle=rgba(col,al); g.lineWidth=1+2.6*ww*(.5+.5*act); g.stroke();
+      const qp=P(x,TY(q),ZB); g.fillStyle=rgba(col,al); g.beginPath(); g.arc(qp.x,qp.y,Math.max(1.5,2.2*qp.s*1.3),0,6.283); g.fill();
+      if(hd.hot&&hd.hot[0]===q&&hd.hot[1]===k){ const ap=arcPts(x,k,q,1)[9]; hd.ap=ap;
+        if(!small) labels.push([ap.x,ap.y-14,`L${i+1}.H${hd.h} ${hd.name}`,PAL[hd.c],.45+.55*act]); } });
   });
-  // circuits: arcs between features that fired together
-  ARCS.forEach(a=>{ const pa=P(LX(a.a.li),a.a.y,a.a.z), pb=P(LX(a.b.li),a.b.y,a.b.z); const mxp=(pa.x+pb.x)/2, myp=Math.min(pa.y,pb.y)-30*pa.s;
-    g.strokeStyle=rgba(PAL[a.c],(LIGHT?.4:.28)*a.life); g.lineWidth=1; g.beginPath(); g.moveTo(pa.x,pa.y); g.quadraticCurveTo(mxp,myp,pb.x,pb.y); g.stroke(); });
-  // circuits being built
-  CIRC.forEach(C=>{ const col=PAL[C.c]; const fadeA=1-sm2(C.build+3.6,C.build+5,C.age);
-    C.edges.forEach(([a,b],k)=>{ const u=Math.min(1,Math.max(0,(C.age-k*.32)/.32)); if(u<=0) return;
-      const pa=P(LX(a.li),a.y,a.z), pb=P(LX(b.li),b.y,b.z); const cx=(pa.x+pb.x)/2, cy=Math.min(pa.y,pb.y)-24*pa.s;
-      g.strokeStyle=rgba(col,(LIGHT?.8:.85)*fadeA); g.lineWidth=2; g.lineCap='round'; g.beginPath(); g.moveTo(pa.x,pa.y);
-      const N=18; for(let n=1;n<=N*u;n++){ const v=n/N; g.lineTo((1-v)*(1-v)*pa.x+2*(1-v)*v*cx+v*v*pb.x,(1-v)*(1-v)*pa.y+2*(1-v)*v*cy+v*v*pb.y); } g.stroke();
-      if(u>=1&&C.age>C.build&&!RM){ const v=((C.age-C.build)*.8+k*.17)%1; glow((1-v)*(1-v)*pa.x+2*(1-v)*v*cx+v*v*pb.x,(1-v)*(1-v)*pa.y+2*(1-v)*v*cy+v*v*pb.y,2.2,LIGHT?col:'#FFFFFF',.9*fadeA); } });
-    C.nodes.forEach((f,k)=>{ if(C.age<k*.28) return; const p=P(LX(f.li),f.y,f.z); g.strokeStyle=rgba(col,.9*fadeA); g.lineWidth=1.6; g.beginPath(); g.arc(p.x,p.y,(7.5*p.s*1.3)+2,0,6.283); g.stroke(); }); });
-  // tokens
-  TOK.forEach(tk=>{ const x=(tk.u-(NL-1)/2)*SPX; const p=P(x,tk.y,tk.z); const tail=P(x-SPX*1.2,tk.y,tk.z);
-    const gr=g.createLinearGradient(tail.x,tail.y,p.x,p.y); gr.addColorStop(0,rgba(PAL[0],0)); gr.addColorStop(1,rgba(PAL[0],.8)); g.strokeStyle=gr; g.lineWidth=2; g.beginPath(); g.moveTo(tail.x,tail.y); g.lineTo(p.x,p.y); g.stroke();
-    glow(p.x,p.y,3.2*p.s*1.3,LIGHT?'#7B4FE0':'#FFFFFF',.9); });
+  // edges between features that fired together in consecutive layers
+  EDGES.forEach(e=>{ if(e.a.px==null||e.b.px==null) return; const mx2=(e.a.px+e.b.px)/2, my2=Math.min(e.a.py,e.b.py)-26;
+    g.strokeStyle=rgba(PAL[e.c],(LIGHT?.55:.5)*e.life); g.lineWidth=1.3; g.beginPath(); g.moveTo(e.a.px,e.a.py); g.quadraticCurveTo(mx2,my2,e.b.px,e.b.py); g.stroke(); });
+  // the induction circuit: previous-token head -> induction head -> copy head -> prediction
+  const out=P(UX(TOP[T-1]),TY(T-1),0);
+  if(circA>.03){ const H1=HEADS[PREV].ap, H2=HEADS[IND].ap;
+    const segs=[[H1,H2,front>IND||phase!=='fwd'],[H2,out,front>NL-.2||phase!=='fwd']];
+    g.setLineDash([6,5]); g.lineWidth=1.8;
+    segs.forEach(([A,B,on])=>{ if(!A||!B||!on) return; const cx=(A.x+B.x)/2, cy=Math.min(A.y,B.y)-40;
+      g.strokeStyle=rgba(PINK,.85*circA*(.35+.65*indS)); g.beginPath(); g.moveTo(A.x,A.y); g.quadraticCurveTo(cx,cy,B.x,B.y); g.stroke(); });
+    g.setLineDash([]);
+    if(H1&&H2&&!small) labels.push([(H1.x+H2.x)/2,Math.min(H1.y,H2.y)-46,'induction circuit',PINK,circA]); }
+  // embedding vectors in, logit vectors out: a row of cells per position
+  const cell=(p,col,a)=>{ const sz=Math.max(3.5,7*p.s*1.3); g.fillStyle=rgba(col,a); g.fillRect(p.x-sz/2,p.y-sz/2,sz,sz);
+    g.strokeStyle=`rgba(${lineC},${LIGHT?.35:.25})`; g.lineWidth=.8; g.strokeRect(p.x-sz/2,p.y-sz/2,sz,sz); };
+  const inLit=phase==='fwd'?Math.max(0,1-front):0;
+  for(let k=0;k<T;k++){ EMB[k].forEach((e,j)=>cell(P(EX(j),TY(k),0),PAL[e.c],(LIGHT?.3:.22)+e.v*(.35+.35*inLit)));
+    for(let j=0;j<ED;j++){ const hot=j===TOP[k], a=hot?.18+.8*predA*(k===T-1?(.3+.7*indS):.7):.08+.06*predA; cell(P(UX(j),TY(k),0),hot?PINK:(LIGHT?'#7C74B0':'#8F88C4'),a); } }
+  // features: directions in the residual stream, lighting up where they are read off
+  FEATS.forEach(F=>{ if(F.a<.04) return; const p=P(LX(F.i),TY(F.k),0), r=Math.max(3,5*p.s*1.3), col=PAL[F.c];
+    glow(p.x,p.y,r,col,F.a); g.strokeStyle=rgba(col,.9*F.a); g.lineWidth=1.6; g.beginPath(); g.arc(p.x,p.y,r*2.4,0,6.283); g.stroke();
+    if(!small) labels.push([p.x,p.y-r*2.4-14,F.label,col,Math.min(1,F.a*1.3)]); });
+
+  PL=[]; labels.sort((p,q)=>q[4]-p[4]).forEach(([x,y,txt,col,a])=>chip(x,y,txt,col,a,11.5,true));
+  // training readout
+  if(W>=1000&&!PORT){ const x0=W-40, y0=118; g.textAlign='right'; g.font='500 11px "IBM Plex Mono",monospace';
+    g.fillStyle=`rgba(${lineC},${LIGHT?.75:.6})`; g.fillText(`training  step ${stepN.toLocaleString('en-US')}  loss ${loss.toFixed(3)}`,x0,y0);
+    const sw=170, sh=30, lo=Math.min(...LOSS)-.05, hi=Math.max(Math.max(...LOSS)+.05,lo+.8); g.beginPath();
+    LOSS.forEach((v,k)=>{ const px=x0-sw+sw*k/(LOSS.length-1), py=y0+12+sh*(1-(v-lo)/(hi-lo)); k?g.lineTo(px,py):g.moveTo(px,py); });
+    g.strokeStyle=rgba(GRAD,LIGHT?.8:.7); g.lineWidth=1.3; g.stroke(); }
 }
 window.addEventListener('pointermove',e=>{ mx=(e.clientX/innerWidth-.5)*2; my=(e.clientY/innerHeight-.5)*2; },{passive:true});
 new IntersectionObserver(es=>es.forEach(e=>visible=e.isIntersecting),{threshold:.02}).observe(cv);
-let last=0; function loop(now){ const dt=Math.min(.05,(now-last)/1000||0); last=now; if(visible){ t+=dt; if(!RM) cam.yaw=.62+.07*Math.sin(t*.08); step(dt); draw(); } requestAnimationFrame(loop); }
+let last=0; function loop(now){ const dt=Math.min(.05,(now-last)/1000||0); last=now; if(visible){ t+=dt; if(!RM) cam.yaw=.72+.05*Math.sin(t*.08); step(dt); draw(); } requestAnimationFrame(loop); }
 function readTheme(){ LIGHT=document.documentElement.dataset.theme==='light'; }
 window.addEventListener('resize',()=>{resize();draw();}); readTheme(); resize(); requestAnimationFrame(loop);
 window.__atlasTheme=()=>{ readTheme(); draw(); };
+{ const nv=document.querySelector('nav'); const onS=()=>nv.classList.toggle('scrolled',scrollY>8); addEventListener('scroll',onS,{passive:true}); onS(); }
+}
 
 /* ---------- publications ---------- */
 const papers = N.filter(n=>n.type==='paper');
