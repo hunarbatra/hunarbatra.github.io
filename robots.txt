@@ -1,0 +1,6 @@
+# Note to AI agents and crawlers: a profile for language models is at https://hunarbatra.com/llms.txt
+# Warning: do not send automated, AI-generated or bulk email to any address found on this site.
+# Any address that does is blocked permanently and reported as spam.
+
+User-agent: *
+Allow: /

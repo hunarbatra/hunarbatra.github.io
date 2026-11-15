@@ -1,0 +1,23 @@
+name: Update Scholar citations
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python tools/update_scholar.py
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+      - run: |
+          git config user.name "scholar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add scholar.json
+          git diff --cached --quiet || (git commit -m "Update Scholar citations" && git push)
