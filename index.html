@@ -530,6 +530,9 @@ window.__atlasTheme=()=>{ readTheme(); draw(); };
 /* ---------- publications ---------- */
 const papers = N.filter(n=>n.type==='paper');
 const SEL = ['mmdiff','hle','lps','medmarks','survey','cmt','spatial','mwm','mmft','bct','evcl','protein'];
+/* order within each year in the "All" view; papers not listed go last in their year */
+const ALL = ['mmdiff','hle','lps','medmarks','survey','cmt','mcj','spatial','mwm','mmft','bct','evcl','protein','fakebot','muce','tigen','covshorts','voice','medbot'];
+const rk = p => { const i = ALL.indexOf(p.id); return i < 0 ? 1e9 : i; };
 const YR = n => (n.k.match(/20\d\d/g)||['']).pop();
 const fw=document.getElementById('filters'), pw=document.getElementById('pubs'); let mode='sel';
 function card(n,selc){ const L=linksOf(n); return `<article class="card pub${selc?' sel':''}"><div class="th">${thumbHTML(n.id)}</div><div><h3>${n.title}</h3>${n.au?`<p class="au">${n.au.replace(/H\. Batra/,m=>'<b>'+m+'</b>')}</p>`:''}<p class="v">${n.k}</p>
@@ -537,7 +540,7 @@ function card(n,selc){ const L=linksOf(n); return `<article class="card pub${sel
 function renderPubs(){
   if(mode==='sel'){ pw.innerHTML = `<div class="pubs">${SEL.map(id=>card(byId[id],true)).join('')}</div>`; return; }
   const yrs=[...new Set(papers.map(YR))].sort((a,b)=>b-a);
-  pw.innerHTML = yrs.map(y=>`<div class="yr">${y}</div><div class="pubs">${papers.filter(p=>YR(p)===y).map(p=>card(p,SEL.includes(p.id))).join('')}</div>`).join(''); }
+  pw.innerHTML = yrs.map(y=>`<div class="yr">${y}</div><div class="pubs">${papers.filter(p=>YR(p)===y).sort((a,b)=>rk(a)-rk(b)).map(p=>card(p,SEL.includes(p.id))).join('')}</div>`).join(''); }
 [['Selected','sel'],['All','all']].forEach(([l,k])=>{ const b=document.createElement('button'); b.type='button'; b.textContent=l; b.setAttribute('aria-pressed',k===mode?'true':'false');
   b.onclick=()=>{ mode=k; fw.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false')); renderPubs(); }; fw.appendChild(b); });
 renderPubs();
