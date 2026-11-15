@@ -218,7 +218,8 @@ footer a:hover{color:var(--hi)}
 .tt{background:none;border:1px solid var(--line2);border-radius:999px;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;color:var(--lav);cursor:pointer;margin-left:6px}
 .tt:hover{color:var(--hi);border-color:var(--pink)}
 .tt svg{width:16px;height:16px}
-:root[data-theme=light] .tt .moon,:root:not([data-theme=light]) .tt .sun{display:none}
+/* show the mode you'll switch to: a sun in dark mode, a moon in light mode */
+:root[data-theme=light] .tt .sun,:root:not([data-theme=light]) .tt .moon{display:none}
 
 /* hero story */
 .story{position:absolute;left:min(480px,36vw);right:40px;bottom:26px;z-index:4;display:grid;gap:12px}
